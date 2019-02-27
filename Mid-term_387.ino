@@ -25,15 +25,13 @@ lcd.begin(16, 2);
 
 void loop(){
  if (mySerial.available())//check if there is input
-  {
+ {
     if(mySerial.read()==C)//check frame header
     {
       j[0]=C;
-      if(mySerial.read()==C)//
-      {
+      if(mySerial.read()==C){
         j[1]=C;
-        for(i=2;i<9;i++)//
-        {
+        for(i=2;i<9;i++){
           j[i]=mySerial.read();
          } 
        ck=j[0]+j[1]+j[2]+j[3]+j[4]+j[5]+j[6]+j[7];
