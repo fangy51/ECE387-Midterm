@@ -2,12 +2,6 @@
 #include<SoftwareSerial.h>
 
 SoftwareSerial mySerial(11, 12);      // 12 > TXD, 11 > RXD, 5V > red cable, GND > black cable
-int OPP = 14;
-int OPP1 = 12;
-int OPP2 = 10;
-int OPP_GND = 15;
-int OPP_GND1 = 13;
-int OPP_GND2 = 11;
 int dis;// distance detected
 int str;// signal strength
 int ck;// used for saving data while checking
