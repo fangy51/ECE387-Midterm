@@ -79,5 +79,5 @@ lcd.print("    ");
 }
 else if(str>=1000)
 lcd.print(str);
-    
+   
    }
