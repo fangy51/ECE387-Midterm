@@ -49,7 +49,7 @@ void loop(){
   Serial.print(dis);
   Serial.print(" cm      signal strength = ");
   Serial.println(str); 
-  //make a 100 ms delay to reduce data collected/samples
+ 
 
   }
 }
