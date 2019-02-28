@@ -1,6 +1,6 @@
 //Author:Yifan Fang
 //ECE387_Spring 2019_MU
-//lidar range sensor working together with LCD 1602 module
+//lidar range sensor working together with LCD 1602 module 
 #include <LiquidCrystal.h>
 #include<SoftwareSerial.h>
 
