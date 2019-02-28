@@ -9,20 +9,20 @@ int dis;// distance detected
 int str;// signal strength
 int ck;// used for saving data while checking
 int i;
-int j[9];//
-const int C=0x59;//
+int j[9];//UART (Universal Asynchronous Receiver/Transmitter), which is used for transmitting data
+const int C=0x59;//data package frame header
 
 // assign arduino pin number for LCD 1602
 
 LiquidCrystal lcd(8, 6, 5, 4, 3, 2); // pin8=RS PIN6=E pin5-2=D4-7
 
 void setup(){
-Serial.begin(115200);
-  while (!Serial);  
+Serial.begin(115200);//set the data transmission speed between PC and arduino 
+  while (!Serial); //show a signal if the system is not ready(used for determine whether there is wire connection problem)
   Serial.println ("getting ready...");
-mySerial.begin(115200);
+mySerial.begin(115200);//set the data transmission speed between arduino and TFmini
 delay (1);
-lcd.begin(16, 2);
+lcd.begin(16, 2);//width = 16, hight = 2
 
 }
 
@@ -32,7 +32,7 @@ void loop(){
     if(mySerial.read()==C)//check frame header
     {
       j[0]=C;
-      if(mySerial.read()==C){
+      if(mySerial.read()==C){//check frame header
         j[1]=C;
         for(i=2;i<9;i++){
           j[i]=mySerial.read();
@@ -49,8 +49,6 @@ void loop(){
   Serial.print(dis);
   Serial.print(" cm      signal strength = ");
   Serial.println(str); 
- 
-
   }
 }
       }
@@ -70,7 +68,7 @@ lcd.print(dis);
 else
 lcd.print(dis);
 
-
+//does not display signal strength when str < 10
 lcd.print("cm  S=");
 if(str>=100 && str<=999){
 lcd.print(str);
